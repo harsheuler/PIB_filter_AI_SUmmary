@@ -117,12 +117,24 @@ def get_article_text(url):
 # --- HELPER 2: GENERATE SUMMARY (STRICT FORMAT) ---
 def generate_summary(text):
     prompt = f"""
-    Summarize this press release.
-    
+    Analyze this press release and generate a summary in the following strict format:
+
     REQUIRED FORMAT:
-    Context- [What is the main event?]
-    Data- [Key numbers, amounts, dates]
-    Keywords- [3-5 tags]
+    
+    1. Full Comprehensive Summary:
+    [Provide a detailed, comprehensive summary of the event. Do not miss any information, but reduce the length for clarity.]
+    
+    2. Schemes and its Data:
+    [Identify any Scheme, Yojana, or Mission mentioned in the release. List them here along with any specific data, numbers, or targets related to them. If none are mentioned, state "No specific schemes mentioned".]
+    
+    3. Context:
+    [Briefly state the main event or occasion]
+    
+    4. Data:
+    [List Key numbers, amounts, dates separate from the schemes section]
+    
+    5. Keywords:
+    [3-5 tags]
     
     Do NOT include the URL in the summary.
     Use proper spacing between sections.
